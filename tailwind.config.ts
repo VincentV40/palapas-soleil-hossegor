@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -74,6 +73,8 @@ export default {
 			fontFamily: {
 				'sonder': ['Sonder', 'sans-serif'],
 				'glacial': ['Glacial Indifference', 'sans-serif'],
+				'abril': ['Abril Fatface', 'cursive'],
+				'quicksand': ['Quicksand', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

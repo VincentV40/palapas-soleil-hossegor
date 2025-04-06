@@ -7,10 +7,10 @@ const Index = () => {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden text-white">
       {/* Background image with overlay */}
-      <div className="absolute inset-0 bg-hero-pattern bg-cover bg-center overlay grain" />
+      <div className="absolute inset-0 bg-hero-pattern bg-cover bg-center overlay grain opacity-75" />
       
       {/* Logo */}
-      <div className="absolute top-6 right-6 z-10 w-24 sm:w-32 animate-fade-in opacity-0">
+      <div className="absolute top-6 left-6 z-10 w-24 sm:w-32 animate-fade-in opacity-0">
         <img 
           src="/lovable-uploads/fb24a1da-c12e-4c55-98b1-c2c4e1c7e472.png" 
           alt="Palapas Logo" 
@@ -22,7 +22,7 @@ const Index = () => {
       <div className="relative z-10 px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-12">
         {/* Main heading */}
         <h1 className={cn(
-          "text-4xl md:text-5xl lg:text-6xl font-sonder",
+          "text-4xl md:text-5xl lg:text-6xl font-abril",
           "leading-tight tracking-wide animate-fade-in opacity-0"
         )}>
           Palapas : l'ombre des bons moments partagés.
@@ -30,7 +30,7 @@ const Index = () => {
         
         {/* Subheading */}
         <p className={cn(
-          "text-xl md:text-2xl font-glacial",
+          "text-xl md:text-2xl font-quicksand",
           "max-w-2xl animate-fade-in [animation-delay:200ms] opacity-0"
         )}>
           Palapas est une tente de plage révolutionnaire pensée à Hossegor.
