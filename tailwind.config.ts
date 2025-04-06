@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				palapas: {
+					red: '#85121A',
+					sand: '#F5E8D3',
+					yellow: '#F8CD35',
+					ocean: '#A3CCDA',
+					white: '#FFFFFF',
+				},
+			},
+			fontFamily: {
+				'sonder': ['Sonder', 'sans-serif'],
+				'glacial': ['Glacial Indifference', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +96,26 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out forwards',
+			},
+			backgroundImage: {
+				'hero-pattern': "url('/lovable-uploads/b059d9ff-7b87-4f71-a840-d105ffd499c0.png')",
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
