@@ -20,21 +20,24 @@ const Index = () => {
       
       {/* Content container */}
       <div className="relative z-10 px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-12">
-        {/* Main heading */}
-        <h1 className={cn(
-          "text-4xl md:text-5xl lg:text-6xl font-abril",
-          "leading-tight tracking-wide animate-fade-in opacity-0"
-        )}>
-          Palapas : l'ombre des bons moments partagés.
-        </h1>
-        
-        {/* Subheading */}
-        <p className={cn(
-          "text-xl md:text-2xl font-quicksand",
-          "max-w-2xl animate-fade-in [animation-delay:200ms] opacity-0"
-        )}>
-          Palapas est une tente de plage révolutionnaire pensée à Hossegor.
-        </p>
+        {/* Title and Subtitle container with white transparency */}
+        <div className="bg-white/25 rounded-lg p-8 backdrop-blur-sm shadow-sm">
+          {/* Main heading */}
+          <h1 className={cn(
+            "text-4xl md:text-5xl lg:text-6xl font-abril text-palapas-red",
+            "leading-tight tracking-wide animate-fade-in opacity-0"
+          )}>
+            Palapas : l'ombre des bons moments partagés.
+          </h1>
+          
+          {/* Subheading */}
+          <p className={cn(
+            "text-xl md:text-2xl font-quicksand text-palapas-red mt-4",
+            "max-w-2xl animate-fade-in [animation-delay:200ms] opacity-0"
+          )}>
+            Palapas est une tente de plage révolutionnaire pensée à Hossegor.
+          </p>
+        </div>
         
         {/* Newsletter signup */}
         <div className="w-full max-w-md mt-4">
