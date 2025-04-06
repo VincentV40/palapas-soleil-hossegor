@@ -11,7 +11,7 @@ const photos = [
   {
     src: "/lovable-uploads/9e992bba-6293-4fec-a5b7-df310f8912c2.png", 
     alt: "Palapas with surfboard",
-    caption: "Parfait pour les surfeurs"
+    caption: "La planche et vous profiterez de l'ombre ensemble"
   },
   {
     src: "/lovable-uploads/55060924-ac3a-4529-9864-f576b2db3e1a.png",
@@ -26,7 +26,7 @@ const photos = [
   {
     src: "/lovable-uploads/4910ab32-7bd0-438a-a2ba-2e5f29c6be7c.png",
     alt: "Palapas detail",
-    caption: "Détails de qualité"
+    caption: "Un lest de 4kg de sable par pieds"
   },
   {
     src: "/lovable-uploads/9a052f7e-1bf5-4977-a601-d67a46fc3c34.png",
