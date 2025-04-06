@@ -30,7 +30,7 @@ const ProductFeatures = () => {
     },
     { 
       icon: <Clock size={32} />, 
-      title: "30 secondes" 
+      title: "30 secondes de montage" 
     },
     { 
       icon: <Square size={32} />, 
@@ -44,9 +44,6 @@ const ProductFeatures = () => {
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-8">
-      <h2 className="text-2xl md:text-3xl font-abril text-palapas-red text-center mb-8 animate-fade-in opacity-0">
-        Nos avantages
-      </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {features.map((feature, index) => (
           <Feature 
