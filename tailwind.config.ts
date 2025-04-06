@@ -75,6 +75,7 @@ export default {
 				'glacial': ['Glacial Indifference', 'sans-serif'],
 				'abril': ['Abril Fatface', 'cursive'],
 				'quicksand': ['Quicksand', 'sans-serif'],
+				'playfair': ['Playfair Display', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
