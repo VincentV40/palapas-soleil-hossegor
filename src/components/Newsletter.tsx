@@ -27,7 +27,7 @@ const Newsletter = () => {
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto animate-fade-in [animation-delay:400ms] opacity-0">
       <p className="text-base md:text-lg text-palapas-red font-bold mb-2 text-center">
-        Soyez les premiers informés et profitez de la livraison offerte
+        Bénéficier de notre prix de lancement à 149,99€ en vous inscrivant. Notre newsletter
       </p>
       <div className="flex flex-col sm:flex-row gap-2">
         <Input

@@ -42,7 +42,7 @@ const ProductFeatures = () => {
     },
     {
       icon: <TagIcon size={32} />,
-      title: "149,99€ au lieu de 199,99€ pour nos premiers clients inscrits à la newsletter"
+      title: "149,99€ pour les 50 premiers clients"
     }
   ];
 
