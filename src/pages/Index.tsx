@@ -9,19 +9,10 @@ const Index = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 bg-hero-pattern bg-cover bg-center overlay grain opacity-75" />
       
-      {/* Logo */}
-      <div className="absolute top-6 left-6 z-10 w-24 sm:w-32 animate-fade-in opacity-0">
-        <img 
-          src="/lovable-uploads/fb24a1da-c12e-4c55-98b1-c2c4e1c7e472.png" 
-          alt="Palapas Logo" 
-          className="w-full"
-        />
-      </div>
-      
       {/* Content container */}
       <div className="relative z-10 px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-12">
         {/* Title and Subtitle container with white transparency */}
-        <div className="bg-white/25 rounded-lg p-8 backdrop-blur-sm shadow-sm">
+        <div className="bg-white/25 rounded-lg p-8 backdrop-blur-sm shadow-sm mt-16">
           {/* Main heading */}
           <h1 className={cn(
             "text-4xl md:text-5xl lg:text-6xl font-abril text-palapas-red",
@@ -32,7 +23,7 @@ const Index = () => {
           
           {/* Subheading */}
           <p className={cn(
-            "text-xl md:text-2xl font-quicksand text-palapas-red mt-4",
+            "text-xl md:text-2xl font-quicksand text-palapas-red mt-4 mx-auto",
             "max-w-2xl animate-fade-in [animation-delay:200ms] opacity-0"
           )}>
             Palapas est une tente de plage révolutionnaire pensée à Hossegor.
