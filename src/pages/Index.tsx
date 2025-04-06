@@ -16,7 +16,7 @@ const Index = () => {
         {/* Content container */}
         <div className="relative z-10 px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-12">
           {/* Title and Subtitle container with white transparency */}
-          <div className="bg-white/25 rounded-lg p-8 backdrop-blur-sm shadow-sm mt-16">
+          <div className="bg-white/25 rounded-lg p-8 backdrop-blur-sm shadow-sm mt-16" style={{ marginTop: "-30px" }}>
             {/* Main heading */}
             <h1 className={cn(
               "text-4xl md:text-5xl lg:text-6xl font-abril text-palapas-red",
