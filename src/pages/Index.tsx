@@ -1,6 +1,8 @@
 
 import Newsletter from "@/components/Newsletter";
 import SocialIcons from "@/components/SocialIcons";
+import ProductFeatures from "@/components/ProductFeatures";
+import PhotoGallery from "@/components/PhotoGallery";
 import { cn } from "@/lib/utils";
 
 const Index = () => {
@@ -34,6 +36,12 @@ const Index = () => {
         <div className="w-full max-w-md mt-4">
           <Newsletter />
         </div>
+        
+        {/* Product Features */}
+        <ProductFeatures />
+        
+        {/* Photo Gallery */}
+        <PhotoGallery />
       </div>
       
       {/* Social links at bottom */}
