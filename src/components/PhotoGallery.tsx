@@ -69,9 +69,6 @@ const PhotoGallery = () => {
   return (
     <section className="w-full py-16 bg-gradient-to-b from-palapas-sand/30 to-palapas-ocean/20">
       <div className="w-full max-w-5xl mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-abril text-palapas-red text-center mb-8 animate-fade-in opacity-0">
-          Découvrez Palapas
-        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {photos.map((photo, index) => (
             <PhotoCard 

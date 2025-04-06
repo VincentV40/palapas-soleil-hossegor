@@ -16,7 +16,7 @@ const SocialIcons = ({ className }: SocialIconsProps) => {
         className="text-white hover:text-palapas-yellow transition-colors p-2 rounded-full"
         aria-label="Instagram"
       >
-        <Instagram size={24} />
+        <Instagram size={32} />
       </a>
     </div>
   );

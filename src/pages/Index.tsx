@@ -16,6 +16,11 @@ const Index = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Instagram icon positioned at top right */}
+      <div className="absolute top-4 right-4 z-20">
+        <SocialIcons className="animate-fade-in [animation-delay:600ms] opacity-0" />
+      </div>
+      
       {/* Hero Section with Background image */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden text-white">
         {/* Background image with overlay */}
@@ -24,13 +29,13 @@ const Index = () => {
         {/* Content container */}
         <div className="relative z-10 px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-12">
           {/* Title and Subtitle container with white transparency */}
-          <div className="bg-white/25 rounded-lg p-8 backdrop-blur-sm shadow-sm mt-16" style={{ marginTop: "-30px" }}>
+          <div className="bg-white/25 rounded-lg p-8 backdrop-blur-sm shadow-sm" style={{ marginTop: "-60px" }}>
             {/* Main heading */}
             <h1 className={cn(
               "text-4xl md:text-5xl lg:text-6xl font-abril text-palapas-red",
               "leading-tight tracking-wide animate-fade-in opacity-0"
             )}>
-              Palapas : l'ombre des bons moments partagés.
+              Palapas : l'ombre des bons moments partagés
             </h1>
             
             {/* Subheading */}
@@ -38,7 +43,7 @@ const Index = () => {
               "text-xl md:text-2xl font-quicksand text-palapas-red mt-4 mx-auto",
               "max-w-2xl animate-fade-in [animation-delay:200ms] opacity-0"
             )}>
-              Palapas est une tente de plage révolutionnaire pensée à Hossegor.
+              Palapas est une tente de plage révolutionnaire pensée à Hossegor
             </p>
           </div>
           
@@ -51,10 +56,8 @@ const Index = () => {
           <ProductFeatures />
         </div>
         
-        {/* Social links at bottom */}
+        {/* Scroll down arrow at bottom */}
         <div className="absolute bottom-8 left-0 right-0 flex flex-col items-center">
-          <SocialIcons className="animate-fade-in [animation-delay:600ms] opacity-0" />
-          
           {/* Scroll down arrow */}
           <button 
             onClick={scrollToGallery}
