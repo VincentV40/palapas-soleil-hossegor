@@ -26,7 +26,7 @@ const Newsletter = () => {
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto animate-fade-in [animation-delay:400ms] opacity-0">
-      <p className="text-sm text-white/90 mb-2 text-center shadow-sm">
+      <p className="text-sm text-palapas-red font-bold mb-2 text-center">
         Soyez les premiers informés et profitez de la livraison offerte
       </p>
       <div className="flex flex-col sm:flex-row gap-2">

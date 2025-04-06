@@ -4,8 +4,16 @@ import SocialIcons from "@/components/SocialIcons";
 import ProductFeatures from "@/components/ProductFeatures";
 import PhotoGallery from "@/components/PhotoGallery";
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
 
 const Index = () => {
+  const scrollToGallery = () => {
+    const gallerySection = document.getElementById('photo-gallery');
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Background image */}
@@ -44,13 +52,24 @@ const Index = () => {
         </div>
         
         {/* Social links at bottom */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+        <div className="absolute bottom-8 left-0 right-0 flex flex-col items-center">
           <SocialIcons className="animate-fade-in [animation-delay:600ms] opacity-0" />
+          
+          {/* Scroll down arrow */}
+          <button 
+            onClick={scrollToGallery}
+            className="mt-4 text-white animate-bounce cursor-pointer"
+            aria-label="Défiler vers la galerie photo"
+          >
+            <ChevronDown className="w-8 h-8 text-palapas-red bg-white/30 rounded-full p-1" />
+          </button>
         </div>
       </section>
       
       {/* Photo Gallery Section */}
-      <PhotoGallery />
+      <section id="photo-gallery">
+        <PhotoGallery />
+      </section>
     </div>
   );
 };
