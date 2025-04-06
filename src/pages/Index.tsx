@@ -22,7 +22,7 @@ const Index = () => {
       <div className="relative z-10 px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-12">
         {/* Main heading */}
         <h1 className={cn(
-          "text-4xl md:text-5xl lg:text-6xl font-playfair text-palapas-red",
+          "text-4xl md:text-5xl lg:text-6xl font-abril",
           "leading-tight tracking-wide animate-fade-in opacity-0"
         )}>
           Palapas : l'ombre des bons moments partagés.
