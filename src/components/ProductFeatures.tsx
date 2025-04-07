@@ -1,5 +1,5 @@
 
-import { ShieldCheck, Clock, Square, BadgeCheck, TagIcon } from "lucide-react";
+import { ShieldCheck, Clock, Square, BadgeCheck, TagIcon, Anchor } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface FeatureProps {
@@ -43,12 +43,16 @@ const ProductFeatures = () => {
     {
       icon: <TagIcon size={32} />,
       title: "149,99€ pour les 50 premiers clients"
+    },
+    {
+      icon: <Anchor size={32} />,
+      title: "14 kg de lest dans les pieds"
     }
   ];
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-8 mt-8">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {features.map((feature, index) => (
           <Feature 
             key={index} 

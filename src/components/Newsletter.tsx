@@ -13,6 +13,25 @@ const Newsletter = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // Webhook URL pour n8n
+    const webhookUrl = "https://n8n-oceaniscapital-u36515.vm.elestio.app/webhook-test/b404b0ab-2758-46c4-938c-8fd8a4e9783f";
+    
+    // Envoyer les données au webhook n8n
+    fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        date: new Date().toISOString(),
+        source: window.location.href
+      }),
+      mode: "no-cors", // Pour éviter les problèmes CORS
+    }).catch(error => {
+      console.error("Erreur lors de l'envoi au webhook:", error);
+    });
+    
     // Simuler une soumission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -36,7 +55,7 @@ const Newsletter = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Votre adresse email"
           required
-          className="bg-white/90 border-palapas-sand focus-visible:ring-palapas-red"
+          className="bg-white/90 border-palapas-sand focus-visible:ring-palapas-red text-palapas-red"
           aria-label="Adresse email pour la newsletter"
         />
         <Button 
