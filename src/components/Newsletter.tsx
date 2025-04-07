@@ -16,17 +16,18 @@ const Newsletter = () => {
     // Webhook URL pour n8n
     const webhookUrl = "https://n8n-oceaniscapital-u36515.vm.elestio.app/webhook-test/b404b0ab-2758-46c4-938c-8fd8a4e9783f";
     
-    // Envoyer les données au webhook n8n
-    fetch(webhookUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        date: new Date().toISOString(),
-        source: window.location.href
-      }),
+    // Construire l'URL avec les paramètres pour la requête GET
+    const queryParams = new URLSearchParams({
+      email: email,
+      date: new Date().toISOString(),
+      source: window.location.href
+    }).toString();
+    
+    const fullUrl = `${webhookUrl}?${queryParams}`;
+    
+    // Envoyer les données au webhook n8n avec une requête GET
+    fetch(fullUrl, {
+      method: "GET",
       mode: "no-cors", // Pour éviter les problèmes CORS
     }).catch(error => {
       console.error("Erreur lors de l'envoi au webhook:", error);
