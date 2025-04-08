@@ -3,11 +3,14 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const isMobile = useIsMobile();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,9 +50,9 @@ const Newsletter = () => {
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto animate-fade-in [animation-delay:400ms] opacity-0">
       <p className="text-base md:text-lg text-palapas-red font-bold mb-2 text-center">
-        Bénéficier de notre prix de lancement à 149,99€ au lieu de 199,99€ en vous inscrivant à notre newsletter
+        Bénéficier de notre prix de lancement à 149,99€ en vous inscrivant à notre newsletter
       </p>
-      <div className="flex flex-col sm:flex-row gap-2">
+      <div className={isMobile ? "flex flex-col gap-2" : "flex flex-row gap-2"}>
         <Input
           type="email"
           value={email}
@@ -62,7 +65,10 @@ const Newsletter = () => {
         <Button 
           type="submit" 
           disabled={isSubmitting}
-          className="bg-palapas-red hover:bg-palapas-red/90 text-white transition-colors"
+          className={cn(
+            "bg-palapas-red hover:bg-palapas-red/90 text-white transition-colors",
+            isMobile ? "w-full" : "whitespace-nowrap"
+          )}
         >
           {isSubmitting ? "Inscription..." : "S'inscrire"}
         </Button>

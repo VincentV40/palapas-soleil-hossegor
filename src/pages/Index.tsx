@@ -5,8 +5,11 @@ import ProductFeatures from "@/components/ProductFeatures";
 import PhotoGallery from "@/components/PhotoGallery";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
+  const isMobile = useIsMobile();
+  
   const scrollToGallery = () => {
     const gallerySection = document.getElementById('photo-gallery');
     if (gallerySection) {
@@ -27,12 +30,15 @@ const Index = () => {
         <div className="absolute inset-0 bg-hero-pattern bg-cover bg-center overlay grain opacity-75" />
         
         {/* Content container */}
-        <div className="relative z-10 px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-12">
+        <div className="relative z-10 px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-8 md:gap-12">
           {/* Title and Subtitle container with white transparency */}
-          <div className="bg-white/25 rounded-lg p-8 backdrop-blur-sm shadow-sm" style={{ marginTop: "-60px" }}>
+          <div className={cn(
+            "bg-white/25 rounded-lg p-4 md:p-8 backdrop-blur-sm shadow-sm w-full",
+            isMobile ? "mt-16" : "mt-[-60px]"
+          )}>
             {/* Main heading */}
             <h1 className={cn(
-              "text-4xl md:text-5xl lg:text-6xl font-abril text-palapas-red",
+              "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-abril text-palapas-red",
               "leading-tight tracking-wide animate-fade-in opacity-0"
             )}>
               Palapas : l'ombre des bons moments partagés
@@ -40,7 +46,7 @@ const Index = () => {
             
             {/* Subheading */}
             <p className={cn(
-              "text-xl md:text-2xl font-quicksand text-palapas-red mt-4 mx-auto",
+              "text-lg sm:text-xl md:text-2xl font-quicksand text-palapas-red mt-4 mx-auto",
               "max-w-2xl animate-fade-in [animation-delay:200ms] opacity-0"
             )}>
               Palapas est une tente de plage révolutionnaire pensée à Hossegor
@@ -48,7 +54,7 @@ const Index = () => {
           </div>
           
           {/* Newsletter signup */}
-          <div className="w-full max-w-md mt-4">
+          <div className="w-full max-w-md mt-2 md:mt-4">
             <Newsletter />
           </div>
           
