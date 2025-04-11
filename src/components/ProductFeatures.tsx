@@ -1,6 +1,7 @@
 
 import { ShieldCheck, Clock, Square, BadgeCheck, TagIcon, Anchor } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { memo } from "react";
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -8,7 +9,8 @@ interface FeatureProps {
   className?: string;
 }
 
-const Feature = ({ icon, title, className }: FeatureProps) => {
+// Memoized Feature component
+const Feature = memo(({ icon, title, className }: FeatureProps) => {
   return (
     <div className={cn(
       "flex flex-col items-center text-center p-4",
@@ -20,9 +22,12 @@ const Feature = ({ icon, title, className }: FeatureProps) => {
       <p className="font-quicksand font-medium text-palapas-red">{title}</p>
     </div>
   );
-};
+});
 
-const ProductFeatures = () => {
+Feature.displayName = "Feature";
+
+// Memoized ProductFeatures component
+const ProductFeatures = memo(() => {
   const features = [
     { 
       icon: <ShieldCheck size={32} />, 
@@ -64,6 +69,8 @@ const ProductFeatures = () => {
       </div>
     </div>
   );
-};
+});
+
+ProductFeatures.displayName = "ProductFeatures";
 
 export default ProductFeatures;

@@ -1,6 +1,7 @@
 
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { cn } from "@/lib/utils";
+import { memo } from "react";
 
 const photos = [
   {
@@ -42,7 +43,8 @@ interface PhotoCardProps {
   className?: string;
 }
 
-const PhotoCard = ({ src, alt, caption, className }: PhotoCardProps) => {
+// Memoized PhotoCard component to prevent unnecessary re-renders
+const PhotoCard = memo(({ src, alt, caption, className }: PhotoCardProps) => {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
@@ -54,7 +56,10 @@ const PhotoCard = ({ src, alt, caption, className }: PhotoCardProps) => {
           <img 
             src={src} 
             alt={alt} 
-            className="w-full h-64 object-cover transition-all duration-700 ease-in-out group-hover:scale-110" 
+            className="w-full h-64 object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+            loading="lazy" // Ajouter chargement paresseux pour les images
+            width="400"
+            height="300"
           />
         </div>
       </HoverCardTrigger>
@@ -63,9 +68,12 @@ const PhotoCard = ({ src, alt, caption, className }: PhotoCardProps) => {
       </HoverCardContent>
     </HoverCard>
   );
-};
+});
 
-const PhotoGallery = () => {
+PhotoCard.displayName = "PhotoCard";
+
+// Memoized main component
+const PhotoGallery = memo(() => {
   return (
     <section className="w-full py-16 bg-gradient-to-b from-palapas-sand/30 to-palapas-ocean/20">
       <div className="w-full max-w-5xl mx-auto px-4">
@@ -83,6 +91,8 @@ const PhotoGallery = () => {
       </div>
     </section>
   );
-};
+});
+
+PhotoGallery.displayName = "PhotoGallery";
 
 export default PhotoGallery;

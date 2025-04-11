@@ -1,12 +1,13 @@
 
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
-const Newsletter = () => {
+// Memoized component to prevent unnecessary re-renders
+const Newsletter = memo(() => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -17,7 +18,7 @@ const Newsletter = () => {
     setIsSubmitting(true);
     
     // Webhook URL pour n8n
-    const webhookUrl = "https://n8n-oceaniscapital-u36515.vm.elestio.app/webhook/b404b0ab-2758-46c4-938c-8fd8a4e9783f";
+    const webhookUrl = "https://n8n-oceaniscapital-u36515.vm.elestio.app/webhook-test/b404b0ab-2758-46c4-938c-8fd8a4e9783f";
     
     // Construire l'URL avec les paramètres pour la requête GET
     const queryParams = new URLSearchParams({
@@ -75,6 +76,9 @@ const Newsletter = () => {
       </div>
     </form>
   );
-};
+});
+
+// Ajouter un displayName pour faciliter le debugging
+Newsletter.displayName = "Newsletter";
 
 export default Newsletter;
