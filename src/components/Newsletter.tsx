@@ -18,7 +18,7 @@ const Newsletter = memo(() => {
     setIsSubmitting(true);
     
     // Webhook URL pour n8n
-    const webhookUrl = "https://n8n-oceaniscapital-u36515.vm.elestio.app/webhook-test/b404b0ab-2758-46c4-938c-8fd8a4e9783f";
+    const webhookUrl = "https://n8n-oceaniscapital-u36515.vm.elestio.app/webhook/b404b0ab-2758-46c4-938c-8fd8a4e9783f";
     
     // Construire l'URL avec les paramètres pour la requête GET
     const queryParams = new URLSearchParams({
