@@ -7,20 +7,29 @@ import { cn } from "@/lib/utils";
 const Newsletter = memo(() => {
   const isMobile = useIsMobile();
 
-  // Ajouter un useEffect pour s'assurer que Klaviyo recharge le formulaire
+  // Fix Klaviyo integration by ensuring the form is properly initialized
   useEffect(() => {
-    // Si window.klaviyo existe, recharger les formulaires
+    // Check if Klaviyo is available globally
     if (window.klaviyo) {
+      // Properly initialize the form
       window.klaviyo.push(['initForms']);
     } else {
-      // Si le script n'est pas encore chargé, essayer à nouveau après un court délai
-      const timer = setTimeout(() => {
+      // Create a MutationObserver to detect when Klaviyo becomes available
+      const observer = new MutationObserver((mutations) => {
         if (window.klaviyo) {
           window.klaviyo.push(['initForms']);
+          observer.disconnect();
         }
-      }, 2000);
+      });
       
-      return () => clearTimeout(timer);
+      // Start observing document for script additions
+      observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true
+      });
+      
+      // Cleanup function
+      return () => observer.disconnect();
     }
   }, []);
 
@@ -33,14 +42,14 @@ const Newsletter = memo(() => {
         "klaviyo-form-container", 
         isMobile ? "flex flex-col" : "flex"
       )}>
-        {/* Klaviyo form embed */}
+        {/* Klaviyo form embed - ensure the div is empty to allow Klaviyo to properly populate it */}
         <div className="klaviyo-form-UyQH2n w-full"></div>
       </div>
     </div>
   );
 });
 
-// Ajouter un displayName pour faciliter le debugging
+// Add displayName for debugging
 Newsletter.displayName = "Newsletter";
 
 export default Newsletter;
