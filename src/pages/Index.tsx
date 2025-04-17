@@ -41,7 +41,7 @@ const Index = () => {
               "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-abril text-palapas-red",
               "leading-tight tracking-wide animate-fade-in opacity-0"
             )}>
-              Palapas : l'ombre des bons moments partagés
+              L'ombre des bons moments partagés
             </h1>
             
             {/* Subheading */}
