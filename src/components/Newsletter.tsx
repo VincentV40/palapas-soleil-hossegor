@@ -26,7 +26,7 @@ const Newsletter = memo(() => {
 
   return (
     <div className="w-full max-w-md mx-auto animate-fade-in [animation-delay:400ms] opacity-0">
-      <p className="text-base md:text-lg text-palapas-red font-bold mb-2 text-center">
+      <p className="text-base font-bold mb-2 text-center text-palapas-red">
         Bénéficier de notre prix de lancement à 149,99€ en vous inscrivant à notre newsletter
       </p>
       <div className={cn(
