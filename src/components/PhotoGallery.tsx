@@ -56,15 +56,15 @@ const PhotoCard = memo(({ src, alt, caption, className }: PhotoCardProps) => {
           <img 
             src={src} 
             alt={alt} 
-            className="w-full h-64 object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
-            loading="lazy" // Ajouter chargement paresseux pour les images
+            className="w-full h-48 sm:h-56 md:h-64 object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+            loading="lazy" 
             width="400"
             height="300"
           />
         </div>
       </HoverCardTrigger>
       <HoverCardContent className="bg-palapas-sand/90 backdrop-blur-sm border-palapas-yellow">
-        <p className="font-quicksand text-palapas-red text-center">{caption}</p>
+        <p className="font-quicksand text-xs sm:text-sm md:text-base text-palapas-red text-center">{caption}</p>
       </HoverCardContent>
     </HoverCard>
   );
@@ -75,9 +75,9 @@ PhotoCard.displayName = "PhotoCard";
 // Memoized main component
 const PhotoGallery = memo(() => {
   return (
-    <section className="w-full py-16 bg-gradient-to-b from-palapas-sand/30 to-palapas-ocean/20">
-      <div className="w-full max-w-5xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section className="w-full py-8 sm:py-12 md:py-16 bg-gradient-to-b from-palapas-sand/30 to-palapas-ocean/20">
+      <div className="w-full max-w-5xl mx-auto px-2 sm:px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {photos.map((photo, index) => (
             <PhotoCard 
               key={index} 
