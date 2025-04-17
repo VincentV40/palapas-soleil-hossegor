@@ -1,11 +1,28 @@
 
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
 // Memoized component to prevent unnecessary re-renders
 const Newsletter = memo(() => {
   const isMobile = useIsMobile();
+
+  // Ajouter un useEffect pour s'assurer que Klaviyo recharge le formulaire
+  useEffect(() => {
+    // Si window.klaviyo existe, recharger les formulaires
+    if (window.klaviyo) {
+      window.klaviyo.push(['initForms']);
+    } else {
+      // Si le script n'est pas encore chargé, essayer à nouveau après un court délai
+      const timer = setTimeout(() => {
+        if (window.klaviyo) {
+          window.klaviyo.push(['initForms']);
+        }
+      }, 2000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   return (
     <div className="w-full max-w-md mx-auto animate-fade-in [animation-delay:400ms] opacity-0">
