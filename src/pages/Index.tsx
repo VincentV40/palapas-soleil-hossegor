@@ -34,7 +34,7 @@ const Index = () => {
           {/* Title and Subtitle container with white transparency */}
           <div className={cn(
             "bg-white/25 rounded-lg p-4 md:p-8 backdrop-blur-sm shadow-sm w-full",
-            isMobile ? "mt-36 pt-6" : "mt-[-20px] pt-6" // Ajout de pt-6 (24px) d'espace en haut du conteneur et ajustement sur mobile
+            isMobile ? "mt-36 pt-6" : "mt-[-30px] pt-6" // Ajout de pt-6 (24px) d'espace en haut du conteneur et ajustement sur mobile
           )}>
             {/* Main heading */}
             <h1 className={cn(
