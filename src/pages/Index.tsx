@@ -53,10 +53,10 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-hero-pattern bg-cover bg-center overlay grain opacity-75" />
         
-        <div className="relative z-10 px-2 sm:px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10">
+        <div className="relative z-10 px-2 sm:px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-between gap-8 sm:gap-10 md:gap-12">
           <div className={cn(
             "bg-white/25 rounded-lg p-3 sm:p-4 md:p-6 backdrop-blur-sm shadow-sm w-full",
-            isMobile ? "mt-32 sm:mt-36" : "mt-24"
+            isMobile ? "mt-20" : "mt-16"
           )}>
             <h1 className={cn(
               "text-xl sm:text-2xl md:text-4xl lg:text-5xl font-abril text-palapas-red",
@@ -73,18 +73,20 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="mt-4 sm:mt-8 md:mt-12 w-full max-w-md scale-90 sm:scale-95 md:scale-100 origin-top">
+          <div className="w-full max-w-md scale-90 sm:scale-95 md:scale-100 origin-top">
             <Newsletter />
           </div>
           
-          <Countdown />
+          <div className="mt-8 sm:mt-12 md:mt-16">
+            <Countdown />
+          </div>
           
-          <div className="scale-75 sm:scale-85 md:scale-90 lg:scale-95 origin-top w-full mb-20 sm:mb-24">
+          <div className="scale-75 sm:scale-85 md:scale-90 lg:scale-95 origin-top w-full mb-24 sm:mb-28">
             <ProductFeatures />
           </div>
         </div>
         
-        <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 flex flex-col items-center">
+        <div className="absolute bottom-8 sm:bottom-10 left-0 right-0 flex flex-col items-center">
           <button 
             onClick={scrollToGallery}
             className="text-white animate-bounce cursor-pointer"
