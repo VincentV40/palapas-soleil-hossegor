@@ -1,3 +1,4 @@
+
 import Newsletter from "@/components/Newsletter";
 import SocialIcons from "@/components/SocialIcons";
 import ProductFeatures from "@/components/ProductFeatures";
@@ -52,10 +53,10 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-hero-pattern bg-cover bg-center overlay grain opacity-75" />
         
-        <div className="relative z-10 px-2 sm:px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8">
+        <div className="relative z-10 px-2 sm:px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10">
           <div className={cn(
             "bg-white/25 rounded-lg p-3 sm:p-4 md:p-6 backdrop-blur-sm shadow-sm w-full",
-            isMobile ? "mt-16 sm:mt-20" : "mt-8"
+            isMobile ? "mt-32 sm:mt-36" : "mt-24"
           )}>
             <h1 className={cn(
               "text-xl sm:text-2xl md:text-4xl lg:text-5xl font-abril text-palapas-red",
@@ -71,19 +72,19 @@ const Index = () => {
               Palapas est une tente de plage révolutionnaire pensée à Hossegor
             </p>
           </div>
-          
-          <div className="w-full max-w-md scale-90 sm:scale-95 md:scale-100 origin-top">
+
+          <div className="mt-4 sm:mt-8 md:mt-12 w-full max-w-md scale-90 sm:scale-95 md:scale-100 origin-top">
             <Newsletter />
           </div>
           
           <Countdown />
           
-          <div className="scale-75 sm:scale-85 md:scale-90 lg:scale-95 origin-top w-full">
+          <div className="scale-75 sm:scale-85 md:scale-90 lg:scale-95 origin-top w-full mb-20 sm:mb-24">
             <ProductFeatures />
           </div>
         </div>
         
-        <div className="absolute bottom-2 sm:bottom-4 left-0 right-0 flex flex-col items-center">
+        <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 flex flex-col items-center">
           <button 
             onClick={scrollToGallery}
             className="text-white animate-bounce cursor-pointer"
