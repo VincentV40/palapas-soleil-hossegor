@@ -53,10 +53,10 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-hero-pattern bg-cover bg-center overlay grain opacity-75" />
         
-        <div className="relative z-10 px-2 sm:px-4 max-w-5xl mx-auto text-center flex flex-col items-center justify-between gap-8 sm:gap-10 md:gap-12">
+        <div className="relative z-10 px-2 sm:px-4 max-w-5xl mx-auto text-center flex flex-col items-center pt-30 justify-evenly gap-4 sm:gap-6 md:gap-8 h-full py-16">
           <div className={cn(
             "bg-white/25 rounded-lg p-3 sm:p-4 md:p-6 backdrop-blur-sm shadow-sm w-full",
-            isMobile ? "mt-20" : "mt-16"
+            "pt-[30px]"
           )}>
             <h1 className={cn(
               "text-xl sm:text-2xl md:text-4xl lg:text-5xl font-abril text-palapas-red",
@@ -73,15 +73,15 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="w-full max-w-md scale-90 sm:scale-95 md:scale-100 origin-top">
+          <div className="w-full max-w-md scale-90 sm:scale-95 md:scale-100 origin-top mt-8 sm:mt-10 md:mt-12">
             <Newsletter />
           </div>
           
-          <div className="mt-8 sm:mt-12 md:mt-16">
+          <div>
             <Countdown />
           </div>
           
-          <div className="scale-75 sm:scale-85 md:scale-90 lg:scale-95 origin-top w-full mb-24 sm:mb-28">
+          <div className="scale-75 sm:scale-85 md:scale-90 lg:scale-95 origin-top w-full mt-2">
             <ProductFeatures />
           </div>
         </div>
